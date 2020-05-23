@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <script>
+        function temperatura() {
+            var tempe = Number(prompt('Digite uma temperatura em °C (Celsius)')) // Number trasnforma a string do prompt para number.
+            var p = document.getElementById('p')
+            var corpo = document.getElementById('corpo') 
+                    
+        
+          var k = 27315/100 + tempe
+          var f = tempe * 9/5 + 32
+
+            p.innerHTML = `<strong>A temperatura de ${tempe}°C, corresponde a... </strong>`
+
+            corpo.innerHTML = `${k}°K (Kelvin) </br></br> ${f}°F (Fahrenheit)`
+        }
+
+    </script>
+    <style>
+        input {
+            padding: 15px;
+        }
+        p {
+            font-size: 20px;
+        }
+
+        div {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Tmperatura</h1>
+    <input type="button" value="Converter" onclick="temperatura()">
+    <p id="p"></p>
+    <div id="corpo" maxLength="4">Clique no botão acima para iniciar</div>
+</body>
+   
+</html>
