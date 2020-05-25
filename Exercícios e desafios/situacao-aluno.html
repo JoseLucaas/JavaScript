@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+
+    <style>
+        input {
+            padding: 15px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        div a {
+            background-color:  rgb(155, 241, 155);
+            color: green;
+        }
+
+        div b {
+            background-color: rgb(214, 214, 126);
+            color: rgb(59, 59, 5);
+        }
+
+        div c {
+            background-color: rgb(235, 145, 145);
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="notas()">
+    <p id="pa">Clique no botão acima para informar as notas do aluno.</p>
+    <div id="div"></div>
+
+    <script>
+        function notas() {
+            var div = document.getElementById('div')
+            var pa = document.getElementById('pa')
+           
+
+            var nome = prompt('Qual o nome do aluno?')
+            var nota1 = Number(prompt(`Primeira nota de ${nome}:`))
+            var nota2 = Number(prompt(`Segunda nota de ${nome}:`))
+
+            pa.innerHTML = `<strong>Analisando a situação de ${nome}</strong>`
+
+            var media = (nota1 + nota2) / 2
+
+            if (media >= 6) {
+                div.innerHTML = `Com as notas ${nota1} e ${nota2}, a <strong>média é ${media}</strong></br></br>`
+               
+                div.innerHTML += 'Com média acima de 6,0. O aluno está <strong><a>APROVADO</a></strong>'
+            } 
+            
+            else if (media < 3) {
+                div.innerHTML = `Com as notas ${nota1} e ${nota2}, a <strong>média é ${media}</strong></br></br>`
+               
+                div.innerHTML += 'Com média abaixo de 3,0. O aluno está <strong><c>REPROVADO<c></strong>'
+            }
+            else if (media < 6 ) {
+                div.innerHTML = `Com as notas ${nota1} e ${nota2}, a <strong>média é ${media}</strong></br></br>`
+               
+                div.innerHTML += 'Com média entre 3,0 e 6,0. O aluno está em <strong><b>RECUPERAÇÃO</b></strong>'
+            } 
+        }
+
+    </script>
+</body>
+</html>
