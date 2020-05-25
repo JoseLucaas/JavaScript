@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+
+    <style>
+        input {
+            display: inline-block;
+            width: 150px;
+            padding: 15px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        p strong {
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Preço Mudou</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <p id="pa">Clique no botão acima para analisar a mudança de preço.</p>
+    <div id="div"></div>
+
+    <script>
+        function verificar() {
+            var pa = document.getElementById('pa')
+            var div = document.getElementById('div')
+
+            var precoAnterior = Number(prompt('Qual era o preço anterior do produto?'))
+            var precoAtual = Number(prompt('Qual é o preço atual do produto?'))
+            
+            var diferença = precoAtual - precoAnterior // Pega a diferença pra colocar no primeiro if          
+            var variacao = (precoAtual - precoAnterior) / precoAnterior * 100 // Pega a porcentagem pra pôr no primiro if
+            
+            var diferença2 = precoAnterior - precoAtual // É usado no segundo if, para o resultado não ficar negativo
+            var variacao2 = (precoAnterior - precoAtual) / precoAtual * 100 // É usado no segundo if, para o resultado não ficar negativo
+            
+            pa.innerHTML = '<strong>Analisando os valores informados.</strong>'
+
+            div.innerHTML = `O preço custava R$ ${precoAnterior} e agora custa R$ ${precoAtual}.</br></br>`
+
+            if ( precoAtual > precoAnterior) {
+                div.innerHTML += 'Hoje o produto está mais caro. </br></br>'
+                div.innerHTML += `O preço subiu R$ ${diferença} em relação ao preço anterior.</br><br>`
+                div.innerHTML += `Uma variação de ${variacao}% pra cima.`
+            } else {
+                div.innerHTML += 'Hoje o produto está mais barato.</br></br>'
+                div.innerHTML += `O preço caiu R$ ${diferença2} em relação ao preço anterior.</br></br>`
+                div.innerHTML += `Uma variação de ${variacao2}% em relação ao preço anterior.`
+            }
+
+
+        }
+
+    </script>   
+</body>
+</html>
