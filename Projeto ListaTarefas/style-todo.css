@@ -1,0 +1,37 @@
+body {
+    background-color: burlywood;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    font-size: 20pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+a{  
+    font-style: italic;
+    font-size: 10pt;
+    color: rgba(94, 9, 9, 0.849);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+input {
+    margin-left: 15px;
+}
+
+button {
+    margin-left: 5px;
+}
+
+main {
+    background-color: cornsilk;
+    width: 550px;
+    height: 640px;
+    margin: auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.514);
+}
